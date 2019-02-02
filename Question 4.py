@@ -1,21 +1,64 @@
-print("Anas Ahmed - 18B-116-CS - Sec 'A'")
-print(" LAB 4 -9 Nov 2018")
-print("question - 4")
+print("Anas Ahmed")
+print("18B-116-CS(A)")
+print("Lab - 04")
+print("Programming Ex: 4")
 
+print("\n\nGrade Sheet\n")
 
-#Python program to display all the prime numbers within an interval
+name = input("Please Enter Your Name         :")
+fname= input("Please Enter Your Father's Name:")
+rno  = input("Please Enter Your Roll Number  :")
+subject_name=[]
+subject_marks=[]
+tot_marks=0
+for x in range(1,6):
+    a=input("\nPlease Enter the Name of Subject"+str(x)+" :")
+    b=int(input("Please Enter the Marks of Subject"+str(x)+":"))
+    subject_name.append(a)
+    subject_marks.append(b)
 
-l_limit = int(input("Enter lower limit range: "))
-u_limit = int(input("Enter upper limit range: "))
+for y in range(5):
+    tot_marks += subject_marks[y]
 
-print("prime numbers between",l_limit,"and",u_limit,"are:")
-for number in range(l_limit,u_limit + 1):
+percentage = (tot_marks/500)*100
+if (percentage>=50) and (percentage<60):
+    grade = 'D'
+elif (percentage>=60) and (percentage<70):
+    grade = 'C'
+elif (percentage>=70) and (percentage<80):
+    grade = 'B'
+elif (percentage>=80) and (percentage<90):
+    grade = 'A'
+elif (percentage>=90) and (percentage<100):
+    grade = 'A+'
+else:
+    grade =  'Fail'
 
-   if number > 1:
+print("\n\nName         :",name)
+print("Father's Name:",fname)
+print("Roll Number  :",rno)
+
+a = [[0 for col in range(5)] for row in range(2)]
+
+for row in range(2):
+    for col in range(5):
+        if row==0:
+            hmm=subject_name[col]
+            a[row][col] = hmm
+        if row==1:
+            hmm=subject_marks[col]
+            a[row][col] = hmm
+
+dash = '_'*30
+for row in range(2):
+    print("\n")
+    for col in range(5):
+        if row==0:
+            print('{:^10s}'.format(a[row][col]),end="")
+        if row==1:
+            print('{:^10d}'.format(a[row][col]),end="")
             
-
-      for i in range(2,number):              
-        if(number % i)==0:
-           break
-      else:
-           print(number)
+            
+print("\n",'{:>10s}'.format("\nTotal Marks :"),str(tot_marks))
+print('{:>10s}'.format("Percentage  :"),str(percentage))
+print('{:>10s}'.format("Grade       :"),str(grade))

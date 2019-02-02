@@ -1,11 +1,13 @@
-print("Anas Ahmed - 18B-116-CS - Sec 'A'")
-print(" LAB 4 -9 Nov 2018")
-print("question - 3")
+print("Anas Ahmed")
+print("18B-116-CS(A)")
+print("Lab - 04")
+print("Programming Ex: 3")
 
-a = 105
-b = 50
-c = 200
+print("\n\nPalindrome Test\n")
 
-if a>b or a>c:
-    print("At least one of the conditions are true")
-    
+user_str = input("Please enter the word to check if its palindrome:")
+user_str = user_str.lower()
+if user_str == user_str[::-1]:
+    print("This is a palindrome!")
+else:
+    print("Sorry this is not a Palindrome!")

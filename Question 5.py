@@ -1,13 +1,31 @@
-print("Anas Ahmed - 18B-116-CS - Sec 'A'")
-print(" LAB 4 -9 Nov 2018")
-print("question - 5")
+print("Anas Ahmed")
+print("18B-116-CS(A)")
+print("Lab - 04")
+print("Programming Ex: 5")
 
-initial_value = eval(input("Enter the initial value for the range :"))
-final_value = eval(input("Enter the final value for the range :"))
-numbers = range(initial_value,final_value+1)
-sum = 0
+print("\n\nTable Generation\n")
 
-for value in numbers:
-    sum = sum + value
 
-print("the sum is",sum)    
+initial = int(input("Please enter the initial value:"))
+final   = int(input("Please enter the final value  :"))
+table = [[0 for col in range(1000)] for row in range(1000)]
+
+
+for row in range(initial,(final+1)):
+    for col in range(initial,(final+1)):
+        if row==initial:
+            table[row][col] = col
+        elif col==initial:
+            table[row][col] = row
+        else:
+            table[row][col] = row*col
+
+for row in range(initial,(final+1)):
+    print("\n")
+    
+    for col in range(initial,(final+1)):
+        print(table[row][col]," ",end="")
+
+
+
+
